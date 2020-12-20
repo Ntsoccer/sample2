@@ -15,30 +15,9 @@ class RegisterController extends Controller
       return view('register');
     }
 
-    public function post(Request $request)
-    {
-      $data=$request->all();
-      $rules=[
-        'name'=>'required',
-        'email'=>'required|email',
-        'password'=>'required|min:7',
-        'password-confirm'=>'required|same:password',
-      ];
-      $messages=[
-        'name.required'=>'名前は必須です。',
-        'email.required'=>'メールアドレスは必須です。',
-        'password.required'=>'パスワードは必須です。',
-        'password.min'=>'パスワードは７文字以上でお願いします。',
-        'password-confirm.same'=>'パスワードが異なっています。',
-      ];
-      $validator=Validator::make($request->all(),$rules,$messages);
-      if($validator->fails()){
-        return redirect('register')
-        ->withErrors($validator)
-        ->withInput();
-      }else{
-        return view('home',compact('data'));
-      }
-      return view('register');
+    public function post(StoreRegister $request)
+    { 
+      $data=$request->all();  
+      return view('home',compact('data'));
     }
 }

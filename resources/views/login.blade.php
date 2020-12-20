@@ -20,6 +20,10 @@
           <input type="password" name="password">
         </div>
         <div class="form-group">
+          <label for="password-confirm">Password</label>
+          <input type="password" name="password-confirm">
+        </div>
+        <div class="form-group">
           <button type="submit" class="btn btn-primary">Login</button>
           <a href="">Forget Your Password?</a>
         </div>
