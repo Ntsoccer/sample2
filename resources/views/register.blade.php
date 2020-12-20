@@ -5,7 +5,7 @@
   <div class="card">
     <div class="card-header">register</div>
     <div class="card-body">
-      <form method="POST" action="{{route('home')}}">
+      <form method="POST" action="{{route('register')}}">
         @csrf
         <div class="form-group">
           @error('name')
